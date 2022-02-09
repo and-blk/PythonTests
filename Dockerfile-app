@@ -1,0 +1,6 @@
+FROM backend-tests-image:latest
+ARG FLASK_SRV
+ENV FLASK_SERVER=$FLASK_SRV
+WORKDIR /app
+ADD . .
+ENTRYPOINT ["pytest"]
